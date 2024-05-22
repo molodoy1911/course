@@ -56,4 +56,11 @@ public class CarDAO {
 
         return cars;
     }
+
+    public boolean deleteCar(int id) {
+        int result = database.delete(DatabaseHelper.TABLE_CARS,
+                DatabaseHelper.COLUMN_CAR_ID + " = ?",
+                new String[]{String.valueOf(id)});
+        return result > 0;
+    }
 }
