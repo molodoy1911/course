@@ -24,6 +24,9 @@ public class EditHelpActivity extends AppCompatActivity {
         String helpText = helpDAO.getHelpText();
         helpDAO.close();
 
+        Button btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
+
         if (helpText != null) {
             etHelpText.setText(helpText);
         }
