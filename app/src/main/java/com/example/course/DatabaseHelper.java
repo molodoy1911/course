@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "course.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public static final String TABLE_USERS = "users";
     public static final String COLUMN_ID = "id";
@@ -22,6 +22,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_CAR_NAME = "name";
     public static final String COLUMN_CAR_DESCRIPTION = "description";
     public static final String COLUMN_CAR_IMAGE = "image";
+
+    public static final String TABLE_HELP = "help";
+    public static final String COLUMN_HELP_ID = "id";
+    public static final String COLUMN_HELP_TEXT = "text";
 
     private static final String TABLE_CREATE_USERS =
             "CREATE TABLE " + TABLE_USERS + " (" +
@@ -37,6 +41,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_CAR_DESCRIPTION + " TEXT, " +
                     COLUMN_CAR_IMAGE + " BLOB);";
 
+    private static final String TABLE_CREATE_HELP =
+            "CREATE TABLE " + TABLE_HELP + " (" +
+                    COLUMN_HELP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COLUMN_HELP_TEXT + " TEXT);";
+
     private final Context context;
 
     public DatabaseHelper(Context context) {
@@ -48,6 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLE_CREATE_USERS);
         db.execSQL(TABLE_CREATE_CARS);
+        db.execSQL(TABLE_CREATE_HELP);
 
         // Проверяем, существует ли пользователь с ролью администратора
         UserDAO userDAO = new UserDAO(context);
@@ -67,8 +77,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CARS);
-        onCreate(db);
+        if (oldVersion < 2) {
+            db.execSQL(TABLE_CREATE_HELP);
+        }
     }
 }

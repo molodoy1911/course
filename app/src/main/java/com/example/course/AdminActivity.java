@@ -29,5 +29,17 @@ public class AdminActivity extends AppCompatActivity {
             Intent intent = new Intent(AdminActivity.this, DeleteCarActivity.class);
             startActivity(intent);
         });
+
+        Button btnViewHelp = findViewById(R.id.btnViewHelp);
+        btnViewHelp.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminActivity.this, ViewHelpActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnEditHelp = findViewById(R.id.btnEditHelp);
+        btnEditHelp.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminActivity.this, EditHelpActivity.class);
+            startActivity(intent);
+        });
     }
 }

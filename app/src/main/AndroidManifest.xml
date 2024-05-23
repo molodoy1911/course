@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Course"
         tools:targetApi="31">
         <activity
+            android:name=".EditHelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewHelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeleteCarActivity"
             android:exported="false" />
         <activity

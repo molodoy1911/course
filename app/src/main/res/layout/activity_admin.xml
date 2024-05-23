@@ -1,33 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AdminActivity">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btnAddCar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить автомобиль"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:layout_margin="16dp"
+        android:text="Add Car"/>
 
     <Button
         android:id="@+id/btnViewCars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Просмотр автомобилей"
         android:layout_below="@id/btnAddCar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_margin="16dp"
+        android:text="View Cars"/>
 
     <Button
         android:id="@+id/btnDeleteCars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Удалить автомобиль"
         android:layout_below="@id/btnViewCars"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_margin="16dp"
+        android:text="Delete Cars"/>
+
+    <Button
+        android:id="@+id/btnViewHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDeleteCars"
+        android:layout_margin="16dp"
+        android:text="View Help"/>
+
+    <Button
+        android:id="@+id/btnEditHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewHelp"
+        android:layout_margin="16dp"
+        android:text="Edit Help"/>
 </RelativeLayout>
