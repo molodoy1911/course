@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="322dp"
-        android:layout_height="44dp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rect_button_background"
         android:text="Регистрация"

@@ -14,20 +14,19 @@
         android:layout_marginTop="16dp"
         android:hint="Название автомобиля"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/etDescription"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.149"
         tools:layout_editor_absoluteX="19dp" />
 
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="600dp"
+        android:layout_marginBottom="436dp"
+        android:maxLength="300"
         android:hint="Описание Автомобиля"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="19dp" />
+        tools:layout_editor_absoluteX="-10dp" />
 
     <ImageView
         android:id="@+id/ivImage"
